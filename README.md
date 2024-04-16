@@ -22,6 +22,8 @@ git init
 ```python
 python -m venv .venv
 source .venv/bin/activate
+# may have to update pip
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 ```
 #### Update requirements.txt
@@ -52,11 +54,11 @@ config = configparser.ConfigParser()
 # Read the configuration file
 config.read('config.ini')
 # Access values from the configuration and convert them to uppercase use a convention for ENV.
-DATABASE_HOST = config['database']['host'].upper()
-DATABASE_PORT = config['database']['port'].upper()
-DATABASE_NAME = config['database']['database'].upper()
-DATABASE_USER = config['database']['user'].upper()
-DATABASE_PASSWORD = config['database']['password'].upper()
+DATABASE_HOST = config['database']['host']
+DATABASE_PORT = config['database']['port']
+DATABASE_NAME = config['database']['database']
+DATABASE_USER = config['database']['user']
+DATABASE_PASSWORD = config['database']['password']
 APP_DEBUG = config['app'].getboolean('debug')
 ```
 
